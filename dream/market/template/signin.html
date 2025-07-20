@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sign In</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css'%}" />
+		<link rel="stylesheet" href="{% static 'assets/js.main.css' %}">
+	</head>
+	<body class="is-preload">
+		
+		<!-- Header -->
+			<header id="header">
+				<h1>Sign in</h1>
+				<p>A simple template for telling the world when you'll launch<br />
+				your next big thing. Brought to you by <a href="http://html5up.net">HTML5 UP</a>.</p>
+			</header>
+
+		<!-- Signup Form -->
+			<form id="signup-form" method="post" action="#">
+				{% csrf_token %}
+				<input type="text" name="email" id="email2" placeholder="Username" />
+				<input type="password" name="email" id="email2" placeholder="Password" />
+				<input type="submit" id="email1" value="Sign In" /> 
+				{% for message in messages %}
+                    <p id="messages">{{message}}</p>
+                    {% endfor %}
+				<br>Do you haven't account 
+				<a href="signup">Sign Up</a> 
+			</form>
+		<!-- Footer -->
+		<br>
+		<footer id="footer">
+			<ul class="icons">
+				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+				<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Untitled.</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</footer>
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/main.js'%}"></script>
+			<script>
+    					
+				var form_fields = document.getElementsByTagName('input')
+				form_fields[1].placeholder='Username..';
+				form_fields[2].placeholder='Password..';
+
+
+		
+		
+				for (var field in form_fields){	
+					form_fields[field].className += ' form-control'
+				}
+		</script>
+	</body>
+</html>
